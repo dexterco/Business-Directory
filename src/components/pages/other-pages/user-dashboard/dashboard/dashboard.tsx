@@ -2,15 +2,18 @@ import { FC } from "react";
 import { activities, chartData, chartDataOption, counters } from "@/data/pages/all-page";
 import Img from "@/utils/BackgroundImageRatio";
 import dynamic from "next/dynamic";
+import { useAppSelector } from "@/redux-toolkit/hooks";
+import { RootState } from "@/redux-toolkit/store";
 
 const ReactApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const Dashboard: FC = () => {
+  const user = useAppSelector((state: RootState) => state.user);
   return (
     <div className="dashboard-main">
       <div className="dashboard-intro">
         <h5>
-          welcome! <span>Mark Enderess</span>
+          welcome! <span>{user.displayName?user.displayName:"User"}</span>
         </h5>
         <p>you have completed 70% of your profile. add basic info to complete profile.</p>
         <div className="complete-profile">
