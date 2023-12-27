@@ -41,6 +41,9 @@ export const signUpWithEmail = async (email:string, password:string,name:string)
     let result: any | null = null,
   error: any = null; 
     const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({
+      prompt:'select_account'
+    })
     try {
       result = await signInWithPopup(auth, provider)
     } catch (e:any) {
@@ -68,8 +71,11 @@ export const signUpWithEmail = async (email:string, password:string,name:string)
 
 
   
-  export const signOut = () => {
-    // Implement Firebase sign-out logic here
-    // You can use Firebase authentication method signOut
-    // Don't forget to dispatch the clearUser action upon successful sign-out
+  export const signOut = async() => {
+     try {
+           await auth.signOut()
+     } catch (error) {
+           console.log(error);
+           
+     }
   };

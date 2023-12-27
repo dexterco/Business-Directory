@@ -1,6 +1,10 @@
 import { userTabs } from "@/data/pages/all-page";
 import UserDetail from "./user-detail";
 import { FC } from "react";
+import { signOut } from "@/utils/firebase/handleAuth";
+import { useRouter } from "next/navigation";
+import { clearUser } from "@/redux-toolkit/reducers/user";
+import { useAppDispatch } from "@/redux-toolkit/hooks";
 
 interface IDashboardSidebarProps {
   handleTabClick: Function;
@@ -8,6 +12,14 @@ interface IDashboardSidebarProps {
 }
 
 const DashboardSidebar: FC<IDashboardSidebarProps> = ({ handleTabClick, activeTab }) => {
+  const router = useRouter()
+  const dispatch = useAppDispatch()
+  const handleSignOut =async ()=>{
+  console.log("clicked");
+  await signOut()
+  dispatch(clearUser())
+  router.replace("/")
+ }
   return (
     <div className="col-lg-3">
       <div className="pro_sticky_info" data-sticky_column>
@@ -22,6 +34,11 @@ const DashboardSidebar: FC<IDashboardSidebarProps> = ({ handleTabClick, activeTa
                   </a>
                 </li>
               ))}
+              <li className="nav-item">
+                <a  className="nav-link" style={{cursor:"pointer"}} onClick={handleSignOut}>
+                 Sign out
+                </a>
+                </li>
             </ul>
           </div>
         </div>
