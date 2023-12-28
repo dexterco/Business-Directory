@@ -82,7 +82,7 @@ const [showDropDown, setShowDropDown] = useState(false)
             <h5>latest filter</h5>
             <img src="/assets/images/icon/adjust.png" className="img-fluid blur-up lazyloaded" alt="" />
             </a>}
-            <FilterTags />
+            {/* <FilterTags /> */}
             {schedule && <FlightTopSchedule setShowFilter={setShowSidebar} showFilter={showSidebar} />}
             <GridLayout grid={grid} value={filteredMenu} type={type} view={view} trip={trip} />
           </div>

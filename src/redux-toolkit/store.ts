@@ -14,6 +14,7 @@ import flightReducer from "./flight-api";
 import cabReducer from "./cab-api";
 import restaurantReducer from "./restaurant-api";
 import { userReducer } from "./reducers/user";
+import { flightDataReducer } from "./reducers/filghtdata";
 import { persistStore, persistReducer, 
   FLUSH,
   REHYDRATE,
@@ -36,7 +37,8 @@ const rootReducer = combineReducers({
   flight: flightReducer,
   cab: cabReducer,
   restaurant: restaurantReducer,
-  user:userReducer
+  user:userReducer,
+  flightdata:flightDataReducer
 });
 
 const persistConfig = {

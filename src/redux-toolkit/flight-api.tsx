@@ -3,8 +3,8 @@ import axios from "axios";
 import { RootState } from "./store";
 
 export const getFlights = createAsyncThunk<IFlightProps[], void, {}>("/api/flight", async () => {
-  const response = await axios.get("/api/flight");
-  return response.data;
+  const response = null
+  return response;
 });
 
 interface IFlightState {

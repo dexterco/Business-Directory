@@ -38,7 +38,7 @@ const FlightTopSchedule: FC<FlightInterFace> = ({
         />
       </a>
       <div className="top-bar-flight">
-        <div className="date-fare-slider">
+        {/* <div className="date-fare-slider">
           <NoSsr>
             <Slider {...slide7} className="fare-6">
               {topScheduleData.map((data, index) => (
@@ -53,8 +53,8 @@ const FlightTopSchedule: FC<FlightInterFace> = ({
               ))}
             </Slider>
           </NoSsr>
-        </div>
-        <div className="fare-calender">
+        </div> */}
+        {/* <div className="fare-calender">
           <div onClick={toggle}>
             <i className="far fa-calendar-alt"></i>
             <h6 className="title">fare calender</h6>
@@ -62,7 +62,7 @@ const FlightTopSchedule: FC<FlightInterFace> = ({
           <div className={`calender-external `}>
             <FullCalendarComponent modal={modal} toggle={toggle} />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

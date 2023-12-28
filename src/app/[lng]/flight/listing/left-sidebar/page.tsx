@@ -12,15 +12,15 @@ import { getFlights } from "@/redux-toolkit/flight-api";
 const LeftSidebar: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { data } = useSelector((state: RootState) => state.flight);
-  useEffect(() => {
-    dispatch(getFlights());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getFlights());
+  // }, [dispatch]);
 
   return (
     <CustomLayout title="light_header custom-user-header" loader="pre">
       <BannerBreadcrumbs />
-      <SearchSection />
-      <GridView side={"left"} value={data} type={"flight"} schedule={true} latestFilter />
+      {/* <SearchSection /> */}
+      <GridView side={"no"} value={data} type={"flight"} schedule={true} latestFilter />
     </CustomLayout>
   );
 };
