@@ -10,3 +10,52 @@
 
 // @import "~slick-carousel/slick/slick.css"; 
 // @import "~slick-carousel/slick/slick-theme.css"; 
+
+@import "../scss/font-awesome.scss";
+@import "../scss/slick.scss";
+@import "../scss/slick-theme.scss";
+@import "./themify.scss";
+// @import "../css/themify-icons.css";
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "@egjs/view360/sass/view360.sass";
+@import 'photoswipe/dist/photoswipe.css';
+@import "./color1.scss";
+
+// @import "~slick-carousel/slick/slick.css"; 
+// @import "~slick-carousel/slick/slick-theme.css"; 
+
+.top-category.margin-cls{
+    margin-top: 70px !important;
+}
+.top-category .top_box {
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+    
+}
+.top-category.radius-cls .top_box {
+    border-radius: 0px !important;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.image-fluid {
+    max-width: 100px;
+    height: 100px;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.top-category .top_box .right-content {
+    padding: 0px!important; 
+}
+.top-category .top_box .right-content h5 {
+    font-size: calc(14px + 2 * (100vw - 320px) / 1600);
+    text-transform: capitalize;
+    font-weight: 400 !important; 
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
